@@ -7,11 +7,11 @@
 }
 
 :root {
-  --bg: #080808;
+  --bg: #faf4ec;
   --bg-card: #111111;
   --bg-card-hover: #181818;
   --border: rgba(255,255,255,0.08);
-  --text: #ffffff;
+  --text: #161616;
   --text-muted: #888888;
   --text-dimmed: #555555;
   --accent: #FF4D00;

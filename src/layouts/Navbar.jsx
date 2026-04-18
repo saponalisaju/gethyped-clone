@@ -1,50 +1,98 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from "react";
+import logo from "../assets/logo.png";
+import "./Navbar.css";
 
 function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [show, setShow] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+
+      if (Math.abs(currentY - lastScrollY.current) < 10) return;
+
+      if (currentY > lastScrollY.current) {
+        setShow(false);
+      } else {
+        setShow(true);
+      }
+
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
-      <div className="navbar__inner">
-        <a href="/" className="navbar__logo" aria-label="Get Hyped">
-          <svg width="42" height="28" viewBox="0 0 42 28" fill="none" aria-hidden="true" className="navbar__logo-icon">
-            <rect width="42" height="28" rx="7" fill="#FF4D00"/>
-            <path d="M7 7.5h3.5v5h9v-5H23v13h-3.5v-5.2h-9V20.5H7V7.5z" fill="#fff"/>
-            <rect x="26" y="7.5" width="9" height="2.6" rx="1.3" fill="#fff"/>
-            <rect x="26" y="12.7" width="9" height="2.6" rx="1.3" fill="#fff"/>
-            <rect x="26" y="17.9" width="9" height="2.6" rx="1.3" fill="#fff"/>
-          </svg>
-          <span>Get Hyped</span>
+    <nav className={`nav ${show ? "nav--show" : "nav--hide"}`}>
+      <div className="navbar">
+        {/* LOGO */}
+        <a href="/">
+          <img src={logo} alt="Get Hyped" className="logo" />
         </a>
 
-        <ul className={`navbar__links${menuOpen ? ' navbar__links--open' : ''}`}>
-          <li><a href="#expertises" onClick={() => setMenuOpen(false)}>Expertises</a></li>
-          <li><a href="#work" onClick={() => setMenuOpen(false)}>Work</a></li>
-          <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
-          <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
-        </ul>
+        {/* MENU */}
+        <div className={`navbar__menu ${menuOpen ? "open" : ""}`}>
+          <a
+            className="button-color-smooth"
+            href="#expertises"
+            onClick={() => setMenuOpen(false)}
+          >
+            <span className="button-color-smooth__inner">Expertises</span>
+          </a>
 
-        <a href="mailto:info@gethyped.nl" className="btn btn--accent navbar__cta">
-          Get Hyped
-        </a>
+          <a
+            className="button-color-smooth"
+            href="#work"
+            onClick={() => setMenuOpen(false)}
+          >
+            <span className="button-color-smooth__inner">Work</span>
+          </a>
 
-        <button
-          className={`hamburger${menuOpen ? ' hamburger--open' : ''}`}
-          onClick={() => setMenuOpen(v => !v)}
-          aria-label="Menu"
-        >
-          <span /><span /><span />
-        </button>
+          <a
+            className="button-color-smooth"
+            href="#about"
+            onClick={() => setMenuOpen(false)}
+          >
+            <span className="button-color-smooth__inner">About</span>
+          </a>
+
+          <a
+            className="button-color-smooth"
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+          >
+            <span className="button-color-smooth__inner">Contact</span>
+          </a>
+        </div>
+
+        {/* RIGHT SIDE */}
+        <div className="nav__right">
+          <a href="mailto:info@gethyped.nl" className="btn-default is-nav">
+            <div className="button-default__inner">
+              <span className="button-default__text">Get Results</span>
+              <span className="button-default__icon">🔥</span>
+            </div>
+          </a>
+
+          {/* HAMBURGER */}
+          <button
+            className={`hamburger ${menuOpen ? "active" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </nav>
-  )
+  );
 }
 
 export default Navbar;

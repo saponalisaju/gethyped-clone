@@ -1,12 +1,13 @@
-import Navbar from './layouts/Navbar'
-import Footer from './layouts/Footer'
-import Hero from './section/Header'
-import ExpertiseSection from './section/SectionExperties'
-import WorkSection from './section/SectionSelectedWork'
-import BrandsSection from './section/SectionBrand'
-import CtaSection from './section/SectionClients'
+import React from "react";
+import Navbar from "./layouts/Navbar";
+import Footer from "./layouts/Footer";
+import HeroSection from "./section/header/Header";
+import IntroSection from "./section/intro/IntroSection";
+import ExpertiseSection from "./section/expertise/SectionExperties";
+import SelectedWorkSection from "./section/work/SectionSelectedWork";
+import BrandSection from "./section/brand/SectionBrand";
 
-import './App.css'
+import "./App.css";
 
 /* ─── App ─────────────────────────────────────────────── */
 export default function App() {
@@ -14,13 +15,13 @@ export default function App() {
     <>
       <Navbar />
       <main>
-        <Hero />
+        <HeroSection />
+        <IntroSection />
         <ExpertiseSection />
-        <WorkSection />
-        <BrandsSection />
-        <CtaSection />
+        <SelectedWorkSection />
+        <BrandSection />
       </main>
       <Footer />
     </>
-  )
+  );
 }

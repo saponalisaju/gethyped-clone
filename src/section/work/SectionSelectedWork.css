@@ -1,0 +1,253 @@
+/* ════════════════════════════════════════════
+   WORK / CASES SECTION
+════════════════════════════════════════════ */
+.work {
+  padding: 120px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.work__header {
+  max-width: 520px;
+  margin-bottom: 0;
+  padding-left: 4em;
+  padding-bottom: 5em;
+}
+
+.work__intro {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25em;
+  line-height: 1em;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  padding-right: 5.5em;
+  padding-bottom: 1em;
+}
+
+.section-title strong{
+  font-family: "Inter", sans-serif;
+  font-size: 1.75em;
+  line-height: 1em;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+
+.work__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 60px;
+  padding: 0 2em;
+}
+
+.case-card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  min-height: 370px;
+  background: #111;
+  border: 8px solid transparent;
+  transform: translateY(var(--y, 0)) rotate(0deg);
+  transition: transform 0.4s ease;
+  transform-origin: left center; /* 🔥 rotate left side */
+}
+
+
+
+/* stair positioning */
+.case-card:nth-child(1) {
+  --y: 0px;
+}
+
+.case-card:nth-child(2) {
+  --y: -100px;
+}
+
+.case-card:nth-child(3) {
+  --y: -200px;
+}
+
+/* hover ONLY rotate */
+.case-card:hover {
+  transform: translateY(var(--y)) rotate(-3deg);
+  z-index: 10;
+}
+
+.case-card__thumb {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  overflow: hidden;
+  background: #0b0b0b;
+}
+
+.case-card__poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.btn__icon__work {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+
+  transition: all 0.3s ease;
+}
+
+
+.btn__icon__work svg {
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+.case-card__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.case-card:hover .case-card__video {
+  opacity: 1;
+}
+
+.case-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.7) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+}
+
+.case-card__info {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 20px;
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  color: #fff;
+
+  border-radius: 18px;
+
+  /* 🔥 LEFT SMALL + RIGHT LONG SHAPE */
+  clip-path: polygon(
+    0 0,
+    85% 0,
+    100% 50%,
+    85% 100%,
+    0 100%
+  );
+}
+
+.case-card__title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+.case-card__cat {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.case-card__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+}
+
+.case-card__info > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  flex: 1;
+}
+
+.case-card__info h3 {
+  line-height: 1.1;
+}
+
+.case-card__info p {
+  margin: 0;
+}
+
+.case-card:nth-child(1) {
+  border-color: #e34e31;
+}
+
+.case-card:nth-child(1) .case-card__info {
+  background: rgba(227, 78, 49, 0.95);
+}
+
+.case-card:nth-child(2) {
+  border-color: #1678ff;
+}
+
+.case-card:nth-child(2) .case-card__info {
+  background: rgba(22, 120, 255, 0.95);
+}
+
+.case-card:nth-child(3) {
+  border-color: #2aa679;
+}
+
+.case-card:nth-child(3) .case-card__info {
+  background: rgba(42, 166, 121, 0.95);
+}
+
+@media (max-width: 1024px) {
+  .work__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .work__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .work__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-card {
+    min-height: 480px;
+  }
+
+  .case-card__info {
+    max-width: 100%;
+    bottom: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+}
+

@@ -1,0 +1,87 @@
+/* SECTION */
+.expertise {
+  padding: 120px 0;
+}
+
+/* LAYOUT */
+.expertise__layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* LEFT MENU */
+.expertise__list {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.expertise__item {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: none;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.expertise__item--active {
+  color: #fff;
+}
+
+/* RIGHT SIDE CONTAINER (STICKY) */
+.expertise__detail {
+  position: relative;
+  top: 0;
+  height: 100vh;
+}
+
+.expertise__video {
+  width: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* SCROLL AREA */
+.expertise__panel-wrapper {
+  position: sticky;   /* ✅ এখানে sticky */
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 100vh; /* 🔥 THIS CREATES SCROLL */
+}
+
+/* PANEL STACK */
+.expertise__panel {
+  position: absolute; /* 🔥 MUST for stacking */
+  width: 100%;
+  max-width: 700px;
+
+  opacity: 0;
+  transform: translateY(80px) scale(0.95);
+  transition: all 0.5s ease;
+
+  z-index: 1;
+}
+
+/* ACTIVE CARD */
+.expertise__panel--active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  z-index: 10;
+}
+
+/* PREVIOUS CARDS (layer feel) */
+.expertise__panel:not(.expertise__panel--active) {
+  opacity: 0.25;
+  transform: scale(0.9);
+}

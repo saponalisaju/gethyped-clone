@@ -1,0 +1,186 @@
+.intro__grid {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.intro__heading{
+  font-family: "Inter", sans-serif;
+  font-size: 3.25em;
+  line-height: 1em;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  padding-left: 2em;
+  padding-right: 4em;
+  padding: 0 4em 1.25em 2em;
+}
+
+/* IMAGE */
+.intro__media {
+  width: 30%;
+ 
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+
+
+.bottom-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* দুই পাশে যাবে */
+  width: 100%;
+  padding-right: 4em;
+  margin-top: 24px;
+}
+
+.btn-scroll {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 10px;
+  border: 1px solid #161616; /* pink border */
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+
+  transition: 0.3s ease;
+}
+
+.icon-wrapper {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.icon {
+  color: #fa5424;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.35s ease;
+}
+
+/* default visible arrow */
+.icon--out {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* hidden below */
+.icon--in {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.btn-scroll:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 79, 216, 0.25);
+}
+
+/* first arrow goes up */
+.btn-scroll:hover .icon--out {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+/* second arrow comes in */
+.btn-scroll:hover .icon--in {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.intro__body{
+  width: 23em;
+  padding-right: 6em;
+}
+
+.intro__image {
+  width: 100%;
+  height: 100%;
+  max-width: 13em;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.intro__content {
+  justify-self: start;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: "Inter", sans-serif;
+  font-size: 1.25em;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 2px 2px 2px 4px;
+  border-radius: 10px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* OUTLINE STYLE */
+.btn--outline {
+  border: 1px solid #000;
+  color: #000;
+  background: transparent;
+}
+
+/* ICON CIRCLE */
+.btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.btn--outline:hover {
+  background: #000;
+  color: #fff;
+}
+
+.btn--outline:hover .btn__icon {
+  background: #fff;
+  color: #000;
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .intro__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro__content {
+    text-align: left;
+  }
+}
