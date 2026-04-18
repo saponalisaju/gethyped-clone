@@ -96,9 +96,9 @@ function WorkSection() {
                   />
                   <div className="case-card__overlay">
                     <div className="case-card__info">
-                      <div>
+                      <div className="case-card__text">
                         <p className="case-card__cat">{c.cat}</p>
-                        <p className="case-card__title">{c.title}</p>
+                        <button className="case-card__title btn ">{c.title}</button>
                       </div>
 
                       <span className="btn__icon__work">
