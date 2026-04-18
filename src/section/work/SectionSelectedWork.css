@@ -110,6 +110,7 @@
   transition: transform 0.3s ease;
 }
 
+
 .case-card__video {
   position: absolute;
   inset: 0;

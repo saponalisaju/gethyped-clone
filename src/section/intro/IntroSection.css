@@ -34,6 +34,8 @@
   margin-top: 24px;
 }
 
+
+
 .btn-scroll {
   width: 36px;
   height: 36px;
@@ -140,6 +142,10 @@
   transition: all 0.3s ease;
 }
 
+.btn:hover{
+  transform: skewX(-8deg) rotate(-8deg);
+}
+
 /* OUTLINE STYLE */
 .btn--outline {
   border: 1px solid #000;
@@ -163,17 +169,6 @@
   transition: all 0.3s ease;
 }
 
-/* HOVER EFFECT */
-.btn--outline:hover {
-  background: #000;
-  color: #fff;
-}
-
-.btn--outline:hover .btn__icon {
-  background: #fff;
-  color: #000;
-  transform: translateX(4px);
-}
 
 @media (max-width: 768px) {
   .intro__grid {

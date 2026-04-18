@@ -32,6 +32,7 @@ function SectionBrand() {
           ))}
         </div>
       </div>
+      
     </section>
   );
 }
