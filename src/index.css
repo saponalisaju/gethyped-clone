@@ -1,6 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -10,13 +12,13 @@
   --bg: #faf4ec;
   --bg-card: #111111;
   --bg-card-hover: #181818;
-  --border: rgba(255,255,255,0.08);
+  --border: rgba(255, 255, 255, 0.08);
   --text: #161616;
   --text-muted: #888888;
   --text-dimmed: #555555;
-  --accent: #FF4D00;
-  --accent-hover: #FF6A1A;
-  --accent-dim: rgba(255,77,0,0.15);
+  --accent: #ff4d00;
+  --accent-hover: #ff6a1a;
+  --accent-dim: rgba(255, 77, 0, 0.15);
   --heading-font: 'Syne', system-ui, sans-serif;
   --body-font: 'Inter', system-ui, sans-serif;
 
@@ -43,11 +45,13 @@ a {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
-img, svg {
+img,
+svg {
   display: block;
   max-width: 100%;
 }

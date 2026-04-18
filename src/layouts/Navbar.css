@@ -6,7 +6,9 @@
   left: 0;
   z-index: 1000;
 
-  transition: transform 0.35s ease, opacity 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
 }
 
 /* SHOW */
@@ -74,7 +76,10 @@
   font-weight: 700;
   color: #111;
   font-size: 0.76rem;
-  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .navbar__menu a:hover,
@@ -104,12 +109,11 @@
 .btn-default {
   display: inline-block;
   transition: transform 0.4s ease;
-
 }
 
-.button-color-smooth{
+.button-color-smooth {
   color: #000;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   font-size: 1.125em;
   font-weight: 600;
   line-height: 1em;
@@ -132,7 +136,7 @@
 
 /* black fill layer */
 .button-color-smooth::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background: black;
@@ -144,7 +148,7 @@
 
 /* yellow flash layer */
 .button-color-smooth::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background: yellow;
@@ -170,34 +174,44 @@
 
 /* background blink */
 @keyframes blinkFlash {
-  0% { opacity: 0; }
-  30% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* text blink */
 @keyframes textBlink {
-  0% { opacity: 1; transform: translateY(0); }
-  50% { opacity: 0.3; transform: translateY(-3px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateY(-3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-
-
-
-.button-color-smooth a{
+.button-color-smooth a {
   cursor: pointer;
 }
 
-.button-color-smooth__inner{
+.button-color-smooth__inner {
   z-index: 1;
   grid-area: 1/1;
-  padding: .225em .25em;
+  padding: 0.225em 0.25em;
   display: grid;
   overflow: clip;
 }
-
-
 
 .btn-default:hover {
   transform: skewX(-10deg) rotate(-10deg);
@@ -216,13 +230,13 @@
 .button-default__icon {
   background-color: #fffef7;
   color: #fa5424;
-  border-radius: .4em;
+  border-radius: 0.4em;
   flex: none;
   justify-content: center;
   align-items: center;
   width: 1.75em;
   height: 1.75em;
-  
+
   display: flex;
   position: relative;
 }
@@ -244,7 +258,6 @@
 
 /* 📱 MOBILE */
 @media (max-width: 768px) {
-
   .navbar__menu {
     position: fixed;
     top: 0;

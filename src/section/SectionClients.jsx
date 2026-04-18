@@ -1,9 +1,9 @@
 /* ─── CTA Section ─────────────────────────────────────── */
 const ctaImages = [
-  { src: '/images/work/bullit.avif',    alt: 'Bullit' },
+  { src: '/images/work/bullit.avif', alt: 'Bullit' },
   { src: '/images/work/loco-loco.avif', alt: 'Loco Loco' },
-  { src: '/images/work/roasta.avif',    alt: 'Roasta' },
-]
+  { src: '/images/work/roasta.avif', alt: 'Roasta' },
+];
 
 function CtaSection() {
   return (
@@ -16,7 +16,12 @@ function CtaSection() {
             <a href="mailto:info@gethyped.nl" className="btn btn--accent btn--lg">
               Mail ons direct
             </a>
-            <a href="https://www.gethyped.nl/contact" className="btn btn--outline btn--lg" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.gethyped.nl/contact"
+              className="btn btn--outline btn--lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Get Results
             </a>
           </div>
@@ -37,7 +42,7 @@ function CtaSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default CtaSection;

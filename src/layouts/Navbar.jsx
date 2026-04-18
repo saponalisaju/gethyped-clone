@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
-import logo from "../assets/logo.png";
-import "./Navbar.css";
+import { useState, useEffect, useRef } from 'react';
+import logo from '../assets/logo.png';
+import './Navbar.css';
 
 function Navbar() {
   const [show, setShow] = useState(true);
@@ -23,13 +23,13 @@ function Navbar() {
       lastScrollY.current = currentY;
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <nav className={`nav ${show ? "nav--show" : "nav--hide"}`}>
+    <nav className={`nav ${show ? 'nav--show' : 'nav--hide'}`}>
       <div className="navbar">
         {/* LOGO */}
         <a href="/">
@@ -37,36 +37,20 @@ function Navbar() {
         </a>
 
         {/* MENU */}
-        <div className={`navbar__menu ${menuOpen ? "open" : ""}`}>
-          <a
-            className="button-color-smooth"
-            href="#expertises"
-            onClick={() => setMenuOpen(false)}
-          >
+        <div className={`navbar__menu ${menuOpen ? 'open' : ''}`}>
+          <a className="button-color-smooth" href="#expertises" onClick={() => setMenuOpen(false)}>
             <span className="button-color-smooth__inner">Expertises</span>
           </a>
 
-          <a
-            className="button-color-smooth"
-            href="#work"
-            onClick={() => setMenuOpen(false)}
-          >
+          <a className="button-color-smooth" href="#work" onClick={() => setMenuOpen(false)}>
             <span className="button-color-smooth__inner">Work</span>
           </a>
 
-          <a
-            className="button-color-smooth"
-            href="#about"
-            onClick={() => setMenuOpen(false)}
-          >
+          <a className="button-color-smooth" href="#about" onClick={() => setMenuOpen(false)}>
             <span className="button-color-smooth__inner">About</span>
           </a>
 
-          <a
-            className="button-color-smooth"
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
-          >
+          <a className="button-color-smooth" href="#contact" onClick={() => setMenuOpen(false)}>
             <span className="button-color-smooth__inner">Contact</span>
           </a>
         </div>
@@ -82,7 +66,7 @@ function Navbar() {
 
           {/* HAMBURGER */}
           <button
-            className={`hamburger ${menuOpen ? "active" : ""}`}
+            className={`hamburger ${menuOpen ? 'active' : ''}`}
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <span></span>

@@ -1,39 +1,40 @@
-import React from "react";
-import "./Footer.css";
+import React from 'react';
+import './Footer.css';
+import logo from '../assets/logo.png';
 
 const navLinks = [
-  { label: "Expertises", href: "/expertises" },
-  { label: "Work", href: "/work" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: 'Expertises', href: '/expertises' },
+  { label: 'Work', href: '/work' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const socialLinks = [
   {
-    type: "linkedin",
-    href: "https://www.linkedin.com/company/gethypednl/",
-    label: "LinkedIn",
+    type: 'linkedin',
+    href: 'https://www.linkedin.com/company/gethypednl/',
+    label: 'LinkedIn',
   },
   {
-    type: "tiktok",
-    href: "https://www.tiktok.com/@gethyped.nl",
-    label: "TikTok",
+    type: 'tiktok',
+    href: 'https://www.tiktok.com/@gethyped.nl',
+    label: 'TikTok',
   },
   {
-    type: "instagram",
-    href: "https://www.instagram.com/gethyped.nl/",
-    label: "Instagram",
+    type: 'instagram',
+    href: 'https://www.instagram.com/gethyped.nl/',
+    label: 'Instagram',
   },
   {
-    type: "youtube",
-    href: "https://www.youtube.com/@gethypednl",
-    label: "YouTube",
+    type: 'youtube',
+    href: 'https://www.youtube.com/@gethypednl',
+    label: 'YouTube',
   },
 ];
 
 const SocialIcon = ({ type }) => {
   switch (type) {
-    case "linkedin":
+    case 'linkedin':
       return (
         <svg
           width="18"
@@ -48,7 +49,7 @@ const SocialIcon = ({ type }) => {
           />
         </svg>
       );
-    case "tiktok":
+    case 'tiktok':
       return (
         <svg
           width="18"
@@ -63,7 +64,7 @@ const SocialIcon = ({ type }) => {
           />
         </svg>
       );
-    case "instagram":
+    case 'instagram':
       return (
         <svg
           width="18"
@@ -86,7 +87,7 @@ const SocialIcon = ({ type }) => {
           />
         </svg>
       );
-    case "youtube":
+    case 'youtube':
       return (
         <svg
           width="18"
@@ -109,13 +110,9 @@ const SocialIcon = ({ type }) => {
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer__grid">
-        <div className="footer__brand">
-          <a href="/" className="footer__brand-logo">
-            GET HYPED
-          </a>
-        </div>
+      <h2 className="footer-title">Let's Get Hyped!</h2>
 
+      <div className="flex w-full justify-end mb-8 padding-right-20">
         <div className="footer__links">
           <div className="footer__nav">
             {navLinks.map((link) => (
@@ -168,23 +165,28 @@ function Footer() {
               7141 AL Groenlo
             </a>
           </div>
-
-          <a href="#" className="footer__privacy">
-            Privacyvoorwaarden
-          </a>
         </div>
       </div>
 
-      <div className="footer__credits">
-        <div className="footer__copyright">© 2025 Get Hyped</div>
-        <a
-          href="https://dylanbrouwer.design/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="footer__design"
-        >
-          © Design by Dylan
-        </a>
+      <div className="flex padding-right-20 w-full">
+        <div className="footer-logo">
+          <img src={logo} alt="" />
+        </div>
+        <div className="flex justify-end w-full">
+          <div className="footer__copyright">© 2025 Get Hyped</div>
+
+          <a
+            href="https://dylanbrouwer.design/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__design"
+          >
+            © Design by Dylan
+          </a>
+          <a href="#" className="">
+            Privacyvoorwaarden
+          </a>
+        </div>
       </div>
     </footer>
   );

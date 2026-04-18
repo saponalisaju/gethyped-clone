@@ -1,34 +1,33 @@
 /* ─── Work Section ────────────────────────────────────── */
-import "./SectionSelectedWork.css";
+import './SectionSelectedWork.css';
 
-const BCDN = "https://gethyped.b-cdn.net";
+const BCDN = 'https://gethyped.b-cdn.net';
 
 const cases = [
   {
-    slug: "bullit",
-    title: "Bullit",
-    cat: "Content creation · Social strategy",
+    slug: 'bullit',
+    title: 'Bullit',
+    cat: 'Content creation · Social strategy',
     video: `${BCDN}/Bullit/Bullit%20%7C%20Loop.mp4`,
-    thumb: "/images/work/bullit.avif",
+    thumb: '/images/work/bullit.avif',
     thumbAlt:
-      "Voor Bullit vertaalden we cultuur en energie naar social-first shorts met resultaat.",
+      'Voor Bullit vertaalden we cultuur en energie naar social-first shorts met resultaat.',
   },
   {
-    slug: "roasta",
-    title: "Roasta",
-    cat: "Content creation · Activation",
+    slug: 'roasta',
+    title: 'Roasta',
+    cat: 'Content creation · Activation',
     video: `${BCDN}/Roasta/roasta-loop.mp4`,
-    thumb: "/images/work/roasta.avif",
-    thumbAlt:
-      "Met to-the-point visuals brengen we de pure smaak van Jamaica over.",
+    thumb: '/images/work/roasta.avif',
+    thumbAlt: 'Met to-the-point visuals brengen we de pure smaak van Jamaica over.',
   },
   {
-    slug: "loco-loco",
-    title: "Loco Loco",
-    cat: "Social strategy · Data",
+    slug: 'loco-loco',
+    title: 'Loco Loco',
+    cat: 'Social strategy · Data',
     video: `${BCDN}/Loco/loco-bites-loop.mp4`,
-    thumb: "/images/work/loco-loco.avif",
-    thumbAlt: "Voor Loco vertaalden we sfeer naar shorts die werken.",
+    thumb: '/images/work/loco-loco.avif',
+    thumbAlt: 'Voor Loco vertaalden we sfeer naar shorts die werken.',
   },
 ];
 
@@ -42,8 +41,8 @@ function WorkSection() {
               <strong>Content dat scoort.</strong>
             </h2>
             <p className="work__intro">
-              Wij vertellen jouw verhaal. Op een manier die écht past bij jouw
-              doelgroep. Met creatieve content die werkt en het verschil maakt.
+              Wij vertellen jouw verhaal. Op een manier die écht past bij jouw doelgroep. Met
+              creatieve content die werkt en het verschil maakt.
             </p>
             <a
               href="https://www.gethyped.nl/work"
@@ -103,12 +102,7 @@ function WorkSection() {
                       </div>
 
                       <span className="btn__icon__work">
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                        >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                           <path
                             d="M5 12h14M13 6l6 6-6 6"
                             stroke="currentColor"

@@ -1,33 +1,32 @@
-import React from "react";
-const BCDN = "https://gethyped.b-cdn.net";
-import "./Content.css";
+import React from 'react';
+const BCDN = 'https://gethyped.b-cdn.net';
+import './Content.css';
 
 const cases = [
   {
-    slug: "bullit",
-    title: "Bullit",
-    cat: "Content creation · Social strategy",
+    slug: 'bullit',
+    title: 'Bullit',
+    cat: 'Content creation · Social strategy',
     video: `${BCDN}/Bullit/Bullit%20%7C%20Loop.mp4`,
-    thumb: "/images/work/bullit.avif",
+    thumb: '/images/work/bullit.avif',
     thumbAlt:
-      "Voor Bullit vertaalden we cultuur en energie naar social-first shorts met resultaat.",
+      'Voor Bullit vertaalden we cultuur en energie naar social-first shorts met resultaat.',
   },
   {
-    slug: "roasta",
-    title: "Roasta",
-    cat: "Content creation · Activation",
+    slug: 'roasta',
+    title: 'Roasta',
+    cat: 'Content creation · Activation',
     video: `${BCDN}/Roasta/roasta-loop.mp4`,
-    thumb: "/images/work/roasta.avif",
-    thumbAlt:
-      "Met to-the-point visuals brengen we de pure smaak van Jamaica over.",
+    thumb: '/images/work/roasta.avif',
+    thumbAlt: 'Met to-the-point visuals brengen we de pure smaak van Jamaica over.',
   },
   {
-    slug: "loco-loco",
-    title: "Loco Loco",
-    cat: "Social strategy · Data",
+    slug: 'loco-loco',
+    title: 'Loco Loco',
+    cat: 'Social strategy · Data',
     video: `${BCDN}/Loco/loco-bites-loop.mp4`,
-    thumb: "/images/work/loco-loco.avif",
-    thumbAlt: "Voor Loco vertaalden we sfeer naar shorts die werken.",
+    thumb: '/images/work/loco-loco.avif',
+    thumbAlt: 'Voor Loco vertaalden we sfeer naar shorts die werken.',
   },
 ];
 
@@ -44,12 +43,7 @@ export const Content = () => {
         >
           <div className="case-card__thumb w-full aspect-video relative overflow-hidden bg-black">
             {/* Desktop: show poster image */}
-            <img
-              src={c.thumb}
-              alt={c.thumbAlt}
-              className="case-card__poster"
-              loading="lazy"
-            />
+            <img src={c.thumb} alt={c.thumbAlt} className="case-card__poster" loading="lazy" />
             {/* Always: video plays on hover (desktop) or auto on touch (mobile) */}
             <video
               src={c.video}

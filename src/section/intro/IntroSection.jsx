@@ -1,5 +1,5 @@
-import React from "react";
-import "./IntroSection.css";
+import React from 'react';
+import './IntroSection.css';
 
 function IntroSection() {
   return (
@@ -8,8 +8,8 @@ function IntroSection() {
         {/* 🔥 TOP TEXT */}
         <div className="intro__text-block">
           <h2 className="intro__heading">
-            Wij maken content die opvalt. Die blijft hangen. Die jouw doelgroep
-            raakt en jouw merk in beweging brengt. Snel, krachtig en energiek.
+            Wij maken content die opvalt. Die blijft hangen. Die jouw doelgroep raakt en jouw merk
+            in beweging brengt. Snel, krachtig en energiek.
           </h2>
         </div>
 
@@ -17,19 +17,15 @@ function IntroSection() {
         <div className="intro__grid">
           {/* LEFT IMAGE */}
           <div className="intro__media">
-            <img
-              className="intro__image"
-              src="/images/hero/anniek-bril.webp"
-              alt=""
-            />
+            <img className="intro__image" src="/images/hero/anniek-bril.webp" alt="" />
           </div>
 
           {/* RIGHT CONTENT */}
           <div className="intro__content">
             <p className="intro__body">
-              We stoppen niet bij mooie plaatjes en vette beelden. We maken het
-              meetbaar. Zo weet je precies wat werkt en wat niet. Nooit meer
-              content zonder strategie. Nooit meer content zonder resultaat.
+              We stoppen niet bij mooie plaatjes en vette beelden. We maken het meetbaar. Zo weet je
+              precies wat werkt en wat niet. Nooit meer content zonder strategie. Nooit meer content
+              zonder resultaat.
             </p>
             <div className="bottom-btn">
               <a href="#about" className="btn btn--outline">

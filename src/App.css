@@ -40,12 +40,6 @@
   margin-bottom: 28px;
 }
 
-
-
-
-
-
-
 /* ════════════════════════════════════════════
    CTA SECTION
 ════════════════════════════════════════════ */
@@ -171,19 +165,37 @@
   transform: rotate(4.5deg) translateY(12px);
 }
 
-.cta__float-item--1:hover { transform: rotate(-2deg) translateY(8px) scale(1.03); }
-.cta__float-item--2:hover { transform: rotate(0deg) translateY(-8px) scale(1.03); }
-.cta__float-item--3:hover { transform: rotate(2deg) translateY(4px) scale(1.03); }
+.cta__float-item--1:hover {
+  transform: rotate(-2deg) translateY(8px) scale(1.03);
+}
+.cta__float-item--2:hover {
+  transform: rotate(0deg) translateY(-8px) scale(1.03);
+}
+.cta__float-item--3:hover {
+  transform: rotate(2deg) translateY(4px) scale(1.03);
+}
 
 @media (max-width: 680px) {
-  .cta__float-images { gap: 12px; }
-  .cta__float-item { width: 120px; }
-  .cta__float-item--2 { width: 140px; }
+  .cta__float-images {
+    gap: 12px;
+  }
+  .cta__float-item {
+    width: 120px;
+  }
+  .cta__float-item--2 {
+    width: 140px;
+  }
 }
 
 @media (max-width: 420px) {
-  .cta__float-images { gap: 8px; }
-  .cta__float-item { width: 95px; border-radius: 10px; }
-  .cta__float-item--2 { width: 110px; }
+  .cta__float-images {
+    gap: 8px;
+  }
+  .cta__float-item {
+    width: 95px;
+    border-radius: 10px;
+  }
+  .cta__float-item--2 {
+    width: 110px;
+  }
 }
-
