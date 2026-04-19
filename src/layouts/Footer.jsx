@@ -111,81 +111,100 @@ function Footer() {
   return (
     <footer className="footer">
       <h2 className="footer-title">Let's Get Hyped!</h2>
-
-      <div className="flex w-full justify-end mb-8 padding-right-20">
-        <div className="footer__links">
-          <div className="footer__nav">
-            {navLinks.map((link) => (
-              <a key={link.label} href={link.href} className="footer__nav-link">
-                {link.label}
-              </a>
-            ))}
+      <div className="flex w-full justify-center align-items-center gap-4">
+        <a href="mailto:info@gethyped.nl" className="footer__button-default-mail">
+          <div className="footer__button-default__inner">
+            <span className="footer__button-default__text">Mail ons direct</span>
+            <span className="footer__button-default__mail-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" />
+              </svg>
+            </span>
           </div>
+        </a>
+        <a href="mailto:info@gethyped.nl" className="footer__button-default-fire">
+          <div className="footer__button-default__inner">
+            <span className="footer__button-default__text">Get Results</span>
+            <span className="footer__button-default__fire-icon">🔥</span>
+          </div>
+        </a>
+      </div>
+      <div className="footer-content ">
+        <div className="footer__info flex w-full justify-end">
+          <div className="footer__links flex">
+            <div className="footer__links-content ">
+              <div className="footer__nav">
+                {navLinks.map((link) => (
+                  <a key={link.label} href={link.href} className="footer__nav-link">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+              <div className="footer__social">
+                <span className="footer__social-label">Follow us</span>
+                <div className="footer__social-list">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.type}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className="footer__social-link"
+                    >
+                      <SocialIcon type={social.type} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="footer__contact gap-4">
+              <div className="footer__contact-col">
+                <div className="footer__label">Contact</div>
+                <a href="mailto:info@gethyped.nl" className="footer__link">
+                  info@gethyped.nl
+                </a>
+                <a href="tel:+31615337496" className="footer__link">
+                  +31 6 1533 7496
+                </a>
+              </div>
 
-          <div className="footer__social">
-            <span className="footer__social-label">Follow us</span>
-            <div className="footer__social-list">
-              {socialLinks.map((social) => (
+              <div className="footer__contact-col">
+                <div className="footer__label mt-4">Adres</div>
                 <a
-                  key={social.type}
-                  href={social.href}
+                  href="https://www.google.nl/maps/dir/52.2173687,6.866555/Beltrumsestraat+6,+7141+AL+Groenlo/@52.0427183,6.6137857,17z/data=!4m18!1m8!3m7!1s0x47b8772ecd81aedd:0x7c0d9a22590807d9!2sBeltrumsestraat+6,+7141+AL+Groenlo!3b1!8m2!3d52.0427183!4d6.6163606!16s%2Fg%2F11b8zbd_sy!4m8!1m1!4e1!1m5!1m1!1s0x47b8772ecd81aedd:0x7c0d9a22590807d9!2m2!1d6.6163606!2d52.0427183?entry=ttu&amp;g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="footer__social-link"
+                  className="footer__link"
                 >
-                  <SocialIcon type={social.type} />
+                  Beltrumsestraat 6,
+                  <br />
+                  7141 AL Groenlo
                 </a>
-              ))}
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="footer__contact">
-          <div className="footer__contact-col">
-            <div className="footer__label">Contact</div>
-            <a href="mailto:info@gethyped.nl" className="footer__link">
-              info@gethyped.nl
-            </a>
-            <a href="tel:+31615337496" className="footer__link">
-              +31 6 1533 7496
-            </a>
+        <div className="flex footer__bottom">
+          <div className="footer__logo">
+            <img src={logo} alt="" />
           </div>
+          <div className="flex footer__bottom-content justify-end w-full">
+            <div className="footer__copyright">© 2025 Get Hyped</div>
 
-          <div className="footer__contact-col">
-            <div className="footer__label">Adres</div>
             <a
-              href="https://www.google.nl/maps/dir/52.2173687,6.866555/Beltrumsestraat+6,+7141+AL+Groenlo/@52.0427183,6.6137857,17z/data=!4m18!1m8!3m7!1s0x47b8772ecd81aedd:0x7c0d9a22590807d9!2sBeltrumsestraat+6,+7141+AL+Groenlo!3b1!8m2!3d52.0427183!4d6.6163606!16s%2Fg%2F11b8zbd_sy!4m8!1m1!4e1!1m5!1m1!1s0x47b8772ecd81aedd:0x7c0d9a22590807d9!2m2!1d6.6163606!2d52.0427183?entry=ttu&amp;g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D"
+              href="https://dylanbrouwer.design/"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer__link"
+              className="footer__design"
             >
-              Beltrumsestraat 6,
-              <br />
-              7141 AL Groenlo
+              © Design by Dylan
+            </a>
+            <a href="#" className="">
+              Privacyvoorwaarden
             </a>
           </div>
-        </div>
-      </div>
-
-      <div className="flex padding-right-20 w-full">
-        <div className="footer-logo">
-          <img src={logo} alt="" />
-        </div>
-        <div className="flex justify-end w-full">
-          <div className="footer__copyright">© 2025 Get Hyped</div>
-
-          <a
-            href="https://dylanbrouwer.design/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer__design"
-          >
-            © Design by Dylan
-          </a>
-          <a href="#" className="">
-            Privacyvoorwaarden
-          </a>
         </div>
       </div>
     </footer>
