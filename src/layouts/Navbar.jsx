@@ -32,48 +32,70 @@ function Navbar() {
     <nav className={`nav ${show ? 'nav--show' : 'nav--hide'}`}>
       <div className="navbar">
         {/* LOGO */}
-        <a href="/">
+        <a href="/" className="navbar__brand">
           <img src={logo} alt="Get Hyped" className="logo" />
         </a>
 
-        {/* MENU */}
-        <div className={`navbar__menu ${menuOpen ? 'open' : ''}`}>
-          <a className="button-color-smooth" href="#expertises" onClick={() => setMenuOpen(false)}>
-            <span className="button-color-smooth__inner">Expertises</span>
+        {/* CENTER MENU (DESKTOP) */}
+        <div className="navbar__menu">
+          <a className="nav__link-menu" href="#expertises">
+            Expertises
           </a>
-
-          <a className="button-color-smooth" href="#work" onClick={() => setMenuOpen(false)}>
-            <span className="button-color-smooth__inner">Work</span>
+          <a className="nav__link-menu" href="#work">
+            Work
           </a>
-
-          <a className="button-color-smooth" href="#about" onClick={() => setMenuOpen(false)}>
-            <span className="button-color-smooth__inner">About</span>
+          <a className="nav__link-menu" href="#about">
+            About
           </a>
-
-          <a className="button-color-smooth" href="#contact" onClick={() => setMenuOpen(false)}>
-            <span className="button-color-smooth__inner">Contact</span>
+          <a className="nav__link-menu" href="#contact">
+            Contact
           </a>
         </div>
 
         {/* RIGHT SIDE */}
         <div className="nav__right">
-          <a href="mailto:info@gethyped.nl" className="btn-default is-nav">
-            <div className="button-default__inner">
-              <span className="button-default__text">Get Results</span>
-              <span className="button-default__icon">🔥</span>
-            </div>
+          {/* CTA BUTTON */}
+          <a href="mailto:info@gethyped.nl" className="btn-default">
+            <span>Get Results 🔥</span>
           </a>
 
           {/* HAMBURGER */}
           <button
             className={`hamburger ${menuOpen ? 'active' : ''}`}
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() => {
+              setMenuOpen((prev) => !prev);
+              document.body.classList.toggle('no-scroll');
+            }}
           >
-            <span></span>
             <span></span>
             <span></span>
           </button>
         </div>
+      </div>
+
+      {/* MOBILE MENU */}
+      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu__items">
+          <a href="#expertises" onClick={() => setMenuOpen(false)}>
+            Expertises
+          </a>
+          <a href="#work" onClick={() => setMenuOpen(false)}>
+            Work
+          </a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>
+            About
+          </a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>
+            Contact
+          </a>
+        </div>
+
+        <a href="mailto:info@gethyped.nl" className="nav__button-default-fire">
+          <div className="nav__button-default__inner">
+            <span className="nav__button-default__text">Get Results</span>
+            <span className="nav__button-default__fire-icon">🔥</span>
+          </div>
+        </a>
       </div>
     </nav>
   );

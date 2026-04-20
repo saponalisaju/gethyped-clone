@@ -318,30 +318,139 @@
   border-top-left-radius: 8px;
 }
 
-/* RESPONSIVE */
+/* ════════════════════════════════════════════
+   RESPONSIVE FIX (DESKTOP SAFE)
+════════════════════════════════════════════ */
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .work__layout {
-    grid-template-columns: 1fr;
+
+  .work {
+    padding: 90px 0;
+  }
+
+  .work__header {
+    padding-left: 2em;
+    padding-bottom: 3em;
+  }
+
+  .work__intro {
+    padding-right: 2em;
   }
 
   .work__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  /* reduce stair effect (important) */
+  .case-card:nth-child(2) { --y: -60px; }
+  .case-card:nth-child(3) { --y: -120px; }
+
+  .case-card__thumb {
+    height: 360px;
   }
 }
 
-@media (max-width: 760px) {
+/* Mobile */
+@media (max-width: 768px) {
+
+  .work {
+    padding: 70px 0;
+  }
+
+  .work__header {
+    padding-left: 1.2em;
+    padding-bottom: 2.5em;
+  }
+
+  .work__intro {
+    font-size: 1.05em;
+    line-height: 1.3;
+    padding-right: 0;
+  }
+
+  .section-title strong {
+    font-size: 1.3em;
+  }
+
   .work__grid {
     grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 1em;
+  }
+
+  /* REMOVE stair effect (must for mobile) */
+  .case-card {
+    transform: none !important;
+  }
+
+  .case-card:nth-child(2),
+  .case-card:nth-child(3) {
+    --y: 0px;
   }
 
   .case-card {
-    min-height: 480px;
+    min-height: auto;
+  }
+
+  .case-card__thumb {
+    height: 260px;
+  }
+
+
+  .case-card__text {
+    width: 65%;
+  }
+
+  .case-card__cat {
+    font-size: 1em;
+  }
+
+  .title-inner {
+    font-size: 0.75rem;
+  }
+
+  .case-card__action {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  .work__header {
+    padding-left: 1em;
+  }
+
+  .work__grid {
+    padding: 0 0.2em;
+  }
+
+  .case-card__thumb {
+    height: 360px;
   }
 
   .case-card__info {
-    max-width: 100%;
-    bottom: 20px;
-    left: 20px;
-    width: calc(100% - 40px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .case-card__text {
+    padding-top: 10px;
+    width: 70%;
+  }
+
+  .case-card__action {
+    align-self: flex-end;
+  }
+
+  .btn-icon__work {
+    width: 32px;
+    height: 32px;
   }
 }
+

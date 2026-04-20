@@ -188,3 +188,162 @@
   object-fit: cover;
   border-radius: 24px;
 }
+
+
+/* ════════════════════════════════════════════
+   TABLET FIX (1024px)
+════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+
+  .card {
+    padding: 50px;
+    gap: 25px;
+  }
+
+  .expertise__tag {
+    font-size: 3em;
+  }
+
+  .serial__number {
+    font-size: 3em;
+    top: 20px;
+    right: 20px;
+  }
+
+  .card video {
+    width: 30%;
+    height: 40%;
+    right: 40px;
+    bottom: 40px;
+  }
+
+  .card-bottom__text {
+    width: 16em;
+    bottom: 40px;
+    left: 30px;
+  }
+}
+
+/* ════════════════════════════════════════════
+   MOBILE FIX (768px)
+   IMPORTANT: convert layout to safe flow
+════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  .expertise {
+   
+    overflow: hidden;
+  }
+
+  .main__content {
+    scroll-snap-type: y mandatory;
+  }
+  
+
+  .expertise__panel {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    scroll-snap-align: start;
+    padding: 20px 15px;
+  }
+
+  .card {
+    position: relative;
+    flex-direction: column;
+    height: 90vh;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .card video {
+    position: relative;
+    width: 150px;
+    height: 220px;
+    margin-top: 20px;
+    right: auto;
+    bottom: auto;
+  }
+
+  .left__item,
+  .right__item {
+    position: relative;
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .expertise__tag {
+    font-size: 2.2em;
+  }
+
+  .serial__number {
+    font-size: 2.2em;
+    top: 10px;
+    right: 15px;
+  }
+
+  /* text positioning fix */
+  .card-top__text {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  .card-bottom__text {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  /* video becomes normal block */
+  .card video {
+    position: relative;
+    width: 240px;
+    height: 320px;
+    transform: rotate(-3deg);
+    right: auto;
+    bottom: auto;
+    transform: none;
+    border-radius: 16px;
+    margin-top: 20px;
+  }
+
+  .btn-exp {
+    font-size: 0.75em;
+  }
+}
+
+/* ════════════════════════════════════════════
+   SMALL MOBILE (480px)
+════════════════════════════════════════════ */
+
+@media (max-width: 480px) {
+
+  .card {
+    padding: 20px 15px;
+  }
+
+  .expertise__tag {
+    font-size: 1.8em;
+  }
+
+  .expertise__head {
+    font-size: 12px;
+  }
+
+  .card video {
+    width: 170px;
+    height: 230px;
+    transform: rotate(-3deg);
+  }
+
+  .serial__number {
+    font-size: 1.8em;
+  }
+}

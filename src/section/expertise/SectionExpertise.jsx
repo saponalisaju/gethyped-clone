@@ -70,31 +70,31 @@ function ExpertiseSection() {
 
   useGSAP(() => {
     const panels = panelsRef.current;
+    const total = panels.length;
+
+    const isMobile = window.innerWidth <= 768;
 
     gsap.set(panels, { yPercent: 100 });
     gsap.set(panels[0], { yPercent: 0 });
-
-    const total = panels.length;
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.expertise',
         start: 'top top',
-        end: `+=${window.innerHeight * total}`,
+        end: () => `+=${window.innerHeight * total}`,
+
         scrub: true,
+
+        // 🔥 IMPORTANT FIX
         pin: true,
+        pinSpacing: true,
+
+        invalidateOnRefresh: true,
 
         onUpdate: (self) => {
-          const index = Math.floor(self.progress * total);
-          const safeIndex = Math.min(index, total - 1);
+          const index = Math.min(Math.floor(self.progress * total), total - 1);
 
-          setActive((prev) => {
-            if (prev !== safeIndex) {
-              console.log('ACTIVE:', safeIndex); // 👈 add this
-              return safeIndex;
-            }
-            return prev;
-          });
+          setActive((prev) => (prev !== index ? index : prev));
         },
       },
     });
@@ -108,6 +108,8 @@ function ExpertiseSection() {
         ease: 'none',
       });
     });
+
+    ScrollTrigger.refresh(); // 🔥 VERY IMPORTANT
   }, []);
 
   useEffect(() => {
