@@ -1,12 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 const BCDN = 'https://gethyped.b-cdn.net';
 import './Header.css';
 
 function SectionHero() {
   const [active, setActive] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   const getStyle = (index) => {
-    const base = [-180, -90, 10, 110]; // initial positions
+    if (isMobile) {
+      return {
+        transform: 'none',
+        zIndex: 'auto',
+      };
+    }
+
+    const base = [-180, -90, 10, 110];
 
     let x = base[index];
     let scale = 1;

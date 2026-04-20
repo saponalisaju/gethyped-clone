@@ -110,9 +110,9 @@
 
 /* BUTTON */
 .btn-default {
-  padding: 10px 16px;
+  padding: 4px 5px;
   background: #fcb8fa;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
   color: #111;
@@ -137,6 +137,95 @@
   box-shadow: 0 18px 40px rgba(212, 123, 255, 0.18);
 }
 
+.navbar__menu{
+  background: #fff;
+  padding: 6px 8px;
+  border-radius: 10px;
+  
+}
+
+.nav__link-menu {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 4px 8px;
+  border-radius: 8px;
+  isolation: isolate; /* 🔥 FIX STACKING */
+  cursor: pointer;
+}
+
+
+.nav__link-menu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #111;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
+}
+
+.nav__link-menu::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+   background: #fa5424;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+/* hover fill */
+.nav__link-menu:hover::before {
+  transform: translateY(0);
+}
+
+@keyframes blinkFlash {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.4;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes textBlink {
+  0% { transform: translateY(0); opacity: 1; }
+  40% { transform: translateY(-2px); opacity: 0.5; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.nav__link-menu:hover::after {
+  animation: blinkFlash 0.45s ease;
+}
+
+.navbar__inner {
+  position: relative;
+  z-index: 2;
+  color: #111;
+  transition: color 0.25s ease;
+}
+
+/* text blink + move */
+.nav__link-menu:hover .navbar__inner {
+  animation: textBlink 0.3s ease;
+  color: white;
+}
+
+.btn-default:hover {
+  transform: skewX(-10deg) rotate(-10deg);
+}
 .nav__button-default__fire-icon {
   background-color: #fffef7;
   color: #000;
@@ -256,6 +345,29 @@
 
 /* MOBILE */
 @media (max-width: 768px) {
+
+  .nav__link-menu {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* TOUCH PRESS EFFECT */
+  .nav__link-menu:active::before {
+    transform: translateY(0);
+  }
+
+  .nav__link-menu:active::after {
+    animation: blinkFlash 0.45s ease;
+  }
+
+  .nav__link-menu:active .navbar__inner {
+    color: #fff;
+    animation: textBlink 0.4s ease;
+  }
+
+  /* optional: nicer tap feedback */
+  .nav__link-menu:active {
+    transform: scale(0.97);
+  }
   .navbar__menu {
     display: none;
   }

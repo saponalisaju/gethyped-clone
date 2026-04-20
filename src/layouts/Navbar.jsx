@@ -45,16 +45,16 @@ function Navbar() {
 
         <div className="navbar__menu">
           <a className="nav__link-menu" href="#expertises">
-            Expertises
+            <span className="navbar__inner">Expertises</span>
           </a>
           <a className="nav__link-menu" href="#work">
-            Work
+            <span className="navbar__inner">Work</span>
           </a>
           <a className="nav__link-menu" href="#about">
-            About
+            <span className="navbar__inner">About</span>
           </a>
           <a className="nav__link-menu" href="#contact">
-            Contact
+            <span className="navbar__inner">Contact</span>
           </a>
         </div>
         <div
@@ -79,7 +79,10 @@ function Navbar() {
         <div className="nav__right">
           {/* CTA BUTTON */}
           <a href="mailto:info@gethyped.nl" className="btn-default">
-            <span>Get Results 🔥</span>
+            <div className="nav__button-default__inner">
+              <span className="nav__button-default__text">Get Results</span>
+              <span className="nav__button-default__fire-icon">🔥</span>
+            </div>
           </a>
 
           {/* HAMBURGER */}
