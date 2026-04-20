@@ -1,3 +1,30 @@
+@media (max-width: 480px) {
+  .container {
+    padding: 0 8px;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  .cta {
+    padding: 60px 0;
+  }
+  .cta__title {
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+  }
+  .cta__float-images {
+    margin-top: 32px;
+    gap: 4px;
+  }
+  .cta__float-item {
+    width: 60px;
+    border-radius: 6px;
+  }
+  .cta__float-item--2 {
+    width: 70px;
+  }
+}
 /* ════════════════════════════════════════════
    UTILITIES
 ════════════════════════════════════════════ */

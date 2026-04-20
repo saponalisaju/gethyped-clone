@@ -1,3 +1,84 @@
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 4px;
+  }
+  .navbar__menu {
+    width: 90vw;
+    padding: 12px 0;
+  }
+  .navbar__menu a {
+    font-size: 1.1em;
+    padding: 12px 0;
+  }
+  .btn-default {
+    font-size: 0.95em;
+    padding: 2px 4px;
+  }
+  .logo {
+    max-width: 90px;
+  }
+}
+/* Overlay for mobile menu */
+.navbar__overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .navbar__overlay.open {
+    display: block;
+  }
+  .navbar__menu {
+    box-shadow: 0 0 0 9999px rgba(0,0,0,0.4);
+  }
+}
+
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+.hamburger span {
+  transition: all 0.3s;
+}
+/* NAV */
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+/* SHOW */
+.nav.nav--show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* HIDE */
+.nav.nav--hide {
+  transform: translateY(-110%);
+  opacity: 0;
+  pointer-events: none;
+}
+
 .navbar {
   max-width: 1200px;
   margin: auto;

@@ -1,3 +1,25 @@
+@media (max-width: 480px) {
+  .intro__heading {
+    font-size: 1.2em;
+    padding: 0 0.5em 0.5em 0.5em;
+  }
+  .intro__body {
+    width: 100%;
+    padding-right: 0.5em;
+    font-size: 0.95em;
+  }
+  .intro__content {
+    font-size: 1em;
+    gap: 12px;
+  }
+  .intro__image {
+    max-width: 7em;
+  }
+  .bottom-btn {
+    padding-right: 0.5em;
+    margin-top: 10px;
+  }
+}
 .intro__grid {
   width: 100%;
   display: flex;

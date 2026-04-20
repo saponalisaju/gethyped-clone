@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+
 import logo from '../assets/logo.png';
 import './Navbar.css';
 
@@ -30,12 +31,20 @@ function Navbar() {
 
   return (
     <nav className={`nav ${show ? 'nav--show' : 'nav--hide'}`}>
+      {/* Overlay for mobile menu */}
+      <div
+        className={`navbar__overlay${menuOpen ? ' open' : ''}`}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden={!menuOpen}
+        tabIndex={menuOpen ? 0 : -1}
+      />
       <div className="navbar">
         {/* LOGO */}
         <a href="/" className="navbar__brand">
           <img src={logo} alt="Get Hyped" className="logo" />
         </a>
 
+<<<<<<< Updated upstream
         {/* CENTER MENU (DESKTOP) */}
         <div className="navbar__menu">
           <a className="nav__link-menu" href="#expertises">
@@ -49,6 +58,24 @@ function Navbar() {
           </a>
           <a className="nav__link-menu" href="#contact">
             Contact
+=======
+        {/* MENU */}
+        <div
+          className={`navbar__menu${menuOpen ? ' open' : ''}`}
+          aria-hidden={!menuOpen && window.innerWidth <= 768}
+        >
+          <a className="button-color-smooth" href="#expertises" onClick={() => setMenuOpen(false)}>
+            <span className="button-color-smooth__inner">Expertises</span>
+          </a>
+          <a className="button-color-smooth" href="#work" onClick={() => setMenuOpen(false)}>
+            <span className="button-color-smooth__inner">Work</span>
+          </a>
+          <a className="button-color-smooth" href="#about" onClick={() => setMenuOpen(false)}>
+            <span className="button-color-smooth__inner">About</span>
+          </a>
+          <a className="button-color-smooth" href="#contact" onClick={() => setMenuOpen(false)}>
+            <span className="button-color-smooth__inner">Contact</span>
+>>>>>>> Stashed changes
           </a>
         </div>
 
@@ -61,11 +88,19 @@ function Navbar() {
 
           {/* HAMBURGER */}
           <button
+<<<<<<< Updated upstream
             className={`hamburger ${menuOpen ? 'active' : ''}`}
             onClick={() => {
               setMenuOpen((prev) => !prev);
               document.body.classList.toggle('no-scroll');
             }}
+=======
+            className={`hamburger${menuOpen ? ' active' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            aria-controls="navbar-menu"
+>>>>>>> Stashed changes
           >
             <span></span>
             <span></span>

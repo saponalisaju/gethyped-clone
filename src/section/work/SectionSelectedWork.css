@@ -1,3 +1,29 @@
+@media (max-width: 480px) {
+  .work {
+    padding: 40px 0;
+  }
+  .work__header {
+    padding-left: 0.5em;
+    padding-bottom: 1.5em;
+    font-size: 1em;
+  }
+  .work__intro {
+    padding-right: 0.5em;
+    font-size: 1em;
+  }
+  .work__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 2px;
+  }
+  .case-card {
+    min-height: 120px;
+    border-radius: 10px;
+  }
+  .case-card__thumb {
+    height: 120px;
+  }
+}
 /* ════════════════════════════════════════════
    WORK / CASES SECTION
 ════════════════════════════════════════════ */

@@ -1,3 +1,30 @@
+@media (max-width: 480px) {
+  .hero {
+    flex-direction: column;
+    min-height: 60vh;
+    padding: 0 4px;
+  }
+  .hero__inner {
+    padding: 2em 0.5em;
+  }
+  .hero__headline {
+    font-size: 2.1em;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+  .hero__subtitle {
+    font-size: 1em;
+  }
+  .hero__bottom {
+    height: 220px;
+  }
+  .result-card {
+    width: 90vw;
+    min-height: 180px;
+    border-radius: 12px;
+    padding: 10px 6px;
+  }
+}
 /* ════════════════════════════════════════════
    HERO  (two-column: title left, cards right)
 ════════════════════════════════════════════ */

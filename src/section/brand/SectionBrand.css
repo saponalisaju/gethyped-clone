@@ -1,3 +1,19 @@
+@media (max-width: 480px) {
+  .brands {
+    padding: 30px 0;
+  }
+  .brands .section-title {
+    font-size: 1.2em;
+    max-width: 100%;
+  }
+  .marquee__item {
+    padding: 0 8px;
+    margin: 0.2rem;
+  }
+  .marquee__item img {
+    height: 16px;
+  }
+}
 /* ════════════════════════════════════════════
    BRANDS MARQUEE
 ════════════════════════════════════════════ */
