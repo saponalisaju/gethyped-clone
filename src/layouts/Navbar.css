@@ -111,15 +111,12 @@
   transition: transform 0.4s ease;
 }
 
+
 .button-color-smooth {
-  color: #000;
   letter-spacing: -0.02em;
   font-size: 1.125em;
   font-weight: 600;
   line-height: 1em;
-}
-
-.button-color-smooth {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -151,7 +148,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: yellow;
+  background: #fa5424;
   opacity: 0;
   z-index: 2;
 }

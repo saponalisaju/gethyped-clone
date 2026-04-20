@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Footer.css';
 import logo from '../assets/logo.png';
 
@@ -108,8 +108,62 @@ const SocialIcon = ({ type }) => {
 };
 
 function Footer() {
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    const container = footerRef.current;
+    if (!container) return;
+
+    const images = container.querySelectorAll('.mouse-img');
+
+    const handleMouseMove = (e) => {
+      const rect = container.getBoundingClientRect();
+
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const img = images[Math.floor(Math.random() * images.length)];
+      if (!img) return;
+
+      img.style.left = `${x}px`;
+      img.style.top = `${y}px`;
+
+      img.classList.add('show');
+
+      setTimeout(() => {
+        img.classList.remove('show');
+      }, 300);
+    };
+
+    container.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      container.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
-    <footer className="footer">
+    <footer className="footer" ref={footerRef}>
+      {/* ✅ IMPORTANT: use ref here */}
+      <div className="mouse-container">
+        <img
+          className="mouse-img"
+          src="https://cdn.prod.website-files.com/6848603da8e6ac95794b7498/684c3415233f03ab6c1143fa_gh-logo-pink.svg"
+        />
+        <img
+          className="mouse-img"
+          src="https://cdn.prod.website-files.com/6848603da8e6ac95794b7498/684c3415e192971624995445_gh-logo-green.svg"
+        />
+        <img
+          className="mouse-img"
+          src="https://cdn.prod.website-files.com/6848603da8e6ac95794b7498/684c3415b3eecf81e4b1d9a7_gh-logo-red.svg"
+        />
+        <img
+          className="mouse-img"
+          src="https://cdn.prod.website-files.com/6848603da8e6ac95794b7498/684c3404e57460370b97757c_7719b29e960423bac19acd325c901392_gh-logo-blue.svg"
+        />
+      </div>
+
       <h2 className="footer-title">Let's Get Hyped!</h2>
       <div className="flex w-full justify-center align-items-center gap-4">
         <a href="mailto:info@gethyped.nl" className="footer__button-default-mail">
@@ -136,7 +190,7 @@ function Footer() {
               <div className="footer__nav">
                 {navLinks.map((link) => (
                   <a key={link.label} href={link.href} className="footer__nav-link">
-                    {link.label}
+                    <span className="button-color-smooth__inner">{link.label}</span>
                   </a>
                 ))}
               </div>
@@ -170,7 +224,7 @@ function Footer() {
               </div>
 
               <div className="footer__contact-col">
-                <div className="footer__label mt-4">Adres</div>
+                <div className="footer__label">Adres</div>
                 <a
                   href="https://www.google.nl/maps/dir/52.2173687,6.866555/Beltrumsestraat+6,+7141+AL+Groenlo/@52.0427183,6.6137857,17z/data=!4m18!1m8!3m7!1s0x47b8772ecd81aedd:0x7c0d9a22590807d9!2sBeltrumsestraat+6,+7141+AL+Groenlo!3b1!8m2!3d52.0427183!4d6.6163606!16s%2Fg%2F11b8zbd_sy!4m8!1m1!4e1!1m5!1m1!1s0x47b8772ecd81aedd:0x7c0d9a22590807d9!2m2!1d6.6163606!2d52.0427183?entry=ttu&amp;g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
