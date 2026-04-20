@@ -151,7 +151,7 @@
 
 .mouse-img {
   position: absolute;
-  width: 40px;
+  width: 180px;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.8);
   transition: all 0.2s ease;
