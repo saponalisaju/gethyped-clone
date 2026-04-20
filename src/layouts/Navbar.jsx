@@ -39,13 +39,10 @@ function Navbar() {
         tabIndex={menuOpen ? 0 : -1}
       />
       <div className="navbar">
-        {/* LOGO */}
         <a href="/" className="navbar__brand">
           <img src={logo} alt="Get Hyped" className="logo" />
         </a>
 
-<<<<<<< Updated upstream
-        {/* CENTER MENU (DESKTOP) */}
         <div className="navbar__menu">
           <a className="nav__link-menu" href="#expertises">
             Expertises
@@ -58,8 +55,8 @@ function Navbar() {
           </a>
           <a className="nav__link-menu" href="#contact">
             Contact
-=======
-        {/* MENU */}
+          </a>
+        </div>
         <div
           className={`navbar__menu${menuOpen ? ' open' : ''}`}
           aria-hidden={!menuOpen && window.innerWidth <= 768}
@@ -75,7 +72,6 @@ function Navbar() {
           </a>
           <a className="button-color-smooth" href="#contact" onClick={() => setMenuOpen(false)}>
             <span className="button-color-smooth__inner">Contact</span>
->>>>>>> Stashed changes
           </a>
         </div>
 
@@ -88,19 +84,16 @@ function Navbar() {
 
           {/* HAMBURGER */}
           <button
-<<<<<<< Updated upstream
             className={`hamburger ${menuOpen ? 'active' : ''}`}
             onClick={() => {
               setMenuOpen((prev) => !prev);
               document.body.classList.toggle('no-scroll');
             }}
-=======
             className={`hamburger${menuOpen ? ' active' : ''}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
             aria-controls="navbar-menu"
->>>>>>> Stashed changes
           >
             <span></span>
             <span></span>
