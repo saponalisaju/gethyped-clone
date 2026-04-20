@@ -8,12 +8,14 @@
 }
 
 .expertise {
+  margin-top: 30px;
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
 
 .expertise__panel {
+ padding: 20px;
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -22,8 +24,64 @@
 }
 
 .card {
+  padding: 20px;
+  border-radius: 20px;
   display: flex;
+  gap: 40px;
+  width: 100%;
   height: 100%;
+}
+
+.left__item {
+  width: 100%;
+  max-width: 22em;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+.card-top__text{
+  position: absolute;
+  top: 50px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-bottom__text{
+  width: 18em;
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right__item {
+  
+  width: 100%;
+  max-width: 22em;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+.serial__number{
+  font-weight: 600;
+position: absolute;
+font-size: 4em;
+  top: 24px;
+  right: 30px;
+  color: rgba(235, 226, 226, 0.3);
+}
+
+.right__item video{
+  position: absolute;
+ border: 8px solid white;
+ 
+ transform: rotate(3deg);
+  bottom: 40px;
+  right: 20px;
 }
 
 /* button section start */
@@ -31,19 +89,16 @@
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 4px;
 
-  padding: 2px 2px 2px 4px;
-  border-radius: 10px;
-
-  font-family: 'Inter', sans-serif;
+  padding: 3px;              /* extra space remove */
+  width: fit-content;      /* যতটুকু দরকার ততটুকু width */
+  
   font-size: 14px;
   font-weight: 500;
 
   text-decoration: none;
   cursor: pointer;
-
-  transition: all 0.3s ease;
 }
 
 .btn:hover {
@@ -97,8 +152,8 @@
   right: 60px;
   bottom: 60px;
 
-  width: 45%;
-  height: 60%;
+  width: 24%;
+  height: 44%;
   object-fit: cover;
   border-radius: 24px;
 }
