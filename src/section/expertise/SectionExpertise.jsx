@@ -19,7 +19,8 @@ const expertises = [
     borderColor: '8px solid #fa5424',
     btnBackground: '#fa5424',
     icoBackground: '#ffffff',
-    svgColor: '#000',
+    svgColor: '#f0e1e1',
+    numColor: '#f0e1e1',
   },
   {
     num: '02',
@@ -29,9 +30,10 @@ const expertises = [
     video: `${BCDN}/Expertises/Loop%20BTS%20comp.mp4`,
     color: '#fcb8fa',
     borderColor: '8px solid #ffffff',
-    btnBackground: '8px solid #ffffff',
-    icoBackground: '8px solid #000',
+    btnBackground: ' #ffffff',
+    icoBackground: ' #000',
     svgColor: '#fff',
+    numColor: '#fdd0fe',
   },
   {
     num: '03',
@@ -39,11 +41,12 @@ const expertises = [
     title: 'Zichtbaar waar en\nwanneer het telt.',
     body: 'De juiste content verdient het om gezien te worden. We verspreiden de content waar jouw doelgroep is. Zo raakt jouw merk de juiste mensen, precies waar en wanneer het telt.',
     video: `${BCDN}/Over%20de%20Top/overdetop-loop.mp4`,
-    color: '#0d8dff',
+    color: '#33c791',
     borderColor: '8px solid #ffffff',
-    btnBackground: '8px solid #ffffff',
-    icoBackground: '8px solid #000',
+    btnBackground: ' #ffffff',
+    icoBackground: '#000',
     svgColor: '#fff',
+    numColor: '#73e2b6',
   },
   {
     num: '04',
@@ -51,11 +54,12 @@ const expertises = [
     title: 'Inzichten die impact maken.',
     body: 'We duiken in de cijfers om te snappen wat écht werkt. En sturen jouw content scherp bij.',
     video: `${BCDN}/Expertises/Data%20comp.mp4`,
-    color: '#33c791',
+    color: '#0d8dff',
     borderColor: '8px solid #ffffff',
-    btnBackground: '8px solid #ffffff',
-    icoBackground: '8px solid #000',
+    btnBackground: ' #ffffff',
+    icoBackground: ' #000',
     svgColor: '#fff',
+    numColor: '#28aaff',
   },
 ];
 
@@ -142,21 +146,17 @@ function ExpertiseSection() {
             <div className="card" style={{ backgroundColor: e.color }}>
               <div className="left__item flex flex-col">
                 <div className="card-top__text">
-                  <span className="expertise__head bg-white px-3 py-3 rounded-md text-sm align-items-center content-fit">
+                  <span className="expertise__head " style={{ background: e.svgColor }}>
                     Expertise
                   </span>
-                  <span className="expertise__tag text-lg">{e.tag}</span>
+                  <span className="expertise__tag text-[4rem] font-bold ">{e.tag}</span>
                 </div>
-                <div className="card-bottom__text">
-                  <span className="expertise__title">{e.title}</span>
-                  <span className="expertise__body">{e.body}</span>
-                  <a
-                    href="#about"
-                    className="btn btn--outline"
-                    style={{ background: e.btnBackground }}
-                  >
+                <div className="card-bottom__text flex flex-col gap-3">
+                  <span className="expertise__title text-xl font-semibold">{e.title}</span>
+                  <span className="expertise__desc text-sm py-4 inline-block">{e.body}</span>
+                  <a href="#about" className="btn-exp " style={{ background: e.btnBackground }}>
                     <span className="btn__text">Leer ons kennen</span>
-                    <span className="btn__icon" style={{ background: e.icoBackground }}>
+                    <span className="btn-exp__icon" style={{ background: e.icoBackground }}>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                         <path
                           d="M5 12h14M13 6l6 6-6 6"
@@ -171,7 +171,9 @@ function ExpertiseSection() {
                 </div>
               </div>
               <div className="right__item flex flex-col">
-                <p className="serial__number">{e.num}</p>
+                <p className="serial__number" style={{ color: e.numColor }}>
+                  {e.num}
+                </p>
                 <video
                   style={{ border: e.borderColor }}
                   ref={(el) => (videoRefs.current[i] = el)}
