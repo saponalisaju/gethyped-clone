@@ -115,6 +115,9 @@ function Footer() {
     if (!container) return;
 
     const images = container.querySelectorAll('.mouse-img');
+    let index = 0;
+
+    const timeouts = new Map();
 
     const handleMouseMove = (e) => {
       const rect = container.getBoundingClientRect();
@@ -122,23 +125,37 @@ function Footer() {
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      const img = images[Math.floor(Math.random() * images.length)];
+      const img = images[index];
       if (!img) return;
 
+      // position
       img.style.left = `${x}px`;
       img.style.top = `${y}px`;
 
+      // show smooth
       img.classList.add('show');
 
-      setTimeout(() => {
+      // clear only this image timeout
+      if (timeouts.has(img)) {
+        clearTimeout(timeouts.get(img));
+      }
+
+      // hide after 5 sec
+      const t = setTimeout(() => {
         img.classList.remove('show');
-      }, 300);
+      }, 5000);
+
+      timeouts.set(img, t);
+
+      // next image
+      index = (index + 1) % images.length;
     };
 
     container.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       container.removeEventListener('mousemove', handleMouseMove);
+      timeouts.forEach(clearTimeout);
     };
   }, []);
 
