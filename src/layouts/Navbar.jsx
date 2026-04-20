@@ -57,23 +57,6 @@ function Navbar() {
             <span className="navbar__inner">Contact</span>
           </a>
         </div>
-        <div
-          className={`navbar__menu${menuOpen ? ' open' : ''}`}
-          aria-hidden={!menuOpen && window.innerWidth <= 768}
-        >
-          <a className="button-color-smooth" href="#expertises" onClick={() => setMenuOpen(false)}>
-            <span className="button-color-smooth__inner">Expertises</span>
-          </a>
-          <a className="button-color-smooth" href="#work" onClick={() => setMenuOpen(false)}>
-            <span className="button-color-smooth__inner">Work</span>
-          </a>
-          <a className="button-color-smooth" href="#about" onClick={() => setMenuOpen(false)}>
-            <span className="button-color-smooth__inner">About</span>
-          </a>
-          <a className="button-color-smooth" href="#contact" onClick={() => setMenuOpen(false)}>
-            <span className="button-color-smooth__inner">Contact</span>
-          </a>
-        </div>
 
         {/* RIGHT SIDE */}
         <div className="nav__right">
