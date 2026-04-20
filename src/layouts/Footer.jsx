@@ -115,9 +115,19 @@ function Footer() {
     if (!container) return;
 
     const images = container.querySelectorAll('.mouse-img');
-    let index = 0;
 
-    const timeouts = new Map();
+    let index = 0;
+    let timeout;
+
+    const getRandomOffset = () => {
+      const angle = Math.random() * Math.PI * 2; // 0 - 360°
+      const distance = 40 + Math.random() * 60; // 40 - 100px
+
+      return {
+        x: Math.cos(angle) * distance,
+        y: Math.sin(angle) * distance,
+      };
+    };
 
     const handleMouseMove = (e) => {
       const rect = container.getBoundingClientRect();
@@ -128,26 +138,27 @@ function Footer() {
       const img = images[index];
       if (!img) return;
 
-      // position
-      img.style.left = `${x}px`;
-      img.style.top = `${y}px`;
+      const offset = getRandomOffset();
 
-      // show smooth
-      img.classList.add('show');
+      // ❗ IMPORTANT: remove previous show first
+      images.forEach((el) => el.classList.remove('show'));
+      const rotate = Math.random() * 30 - 15; // -15deg to +15deg
 
-      // clear only this image timeout
-      if (timeouts.has(img)) {
-        clearTimeout(timeouts.get(img));
-      }
+      // 👉 random position around mouse
+      img.style.left = `${x + offset.x}px`;
+      img.style.top = `${y + offset.y}px`;
+      img.style.transform = `translate(-50%, -50%) rotate(${rotate}deg)`;
 
-      // hide after 5 sec
-      const t = setTimeout(() => {
+      requestAnimationFrame(() => {
+        img.classList.add('show');
+      });
+
+      clearTimeout(timeout);
+
+      timeout = setTimeout(() => {
         img.classList.remove('show');
-      }, 5000);
+      }, 2000);
 
-      timeouts.set(img, t);
-
-      // next image
       index = (index + 1) % images.length;
     };
 
@@ -155,7 +166,7 @@ function Footer() {
 
     return () => {
       container.removeEventListener('mousemove', handleMouseMove);
-      timeouts.forEach(clearTimeout);
+      clearTimeout(timeout);
     };
   }, []);
 
